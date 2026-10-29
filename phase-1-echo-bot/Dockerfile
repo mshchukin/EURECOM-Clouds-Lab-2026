@@ -22,7 +22,7 @@ FROM python:3.11-slim
 WORKDIR /app
 # Bring in the packages installed in the builder (site-packages + console scripts).
 COPY --from=builder /install /usr/local
-COPY app.py .
+COPY phase-1-echo-bot/app.py .
 ENV PORT=8080
 EXPOSE 8080
 # TODO: set the CMD to launch gunicorn, binding 0.0.0.0:8080 and serving "app:app". Use 1 worker and 8 threads.
