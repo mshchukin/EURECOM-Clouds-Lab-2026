@@ -2,12 +2,12 @@
 
 ## 1. Setup facts
 
-**Your image size**, in MB:
+**Your image size**, in MB, from gcloud artifacts docker images list (number only, e.g. 142 ):
 <!--answer:size-->
 49
 <!--answer:size-->
 
-**The custom VPC and subnet you created**:
+**The custom VPC and subnet you created** (names only):
 <!--answer:vpc-->
 echo-net
 <!--answer:vpc-->
@@ -24,10 +24,23 @@ IaaS VM | <!--answer:vm_c-->241.7<!--answer:vm_c--> | <!--answer:vm_w-->212.2<!-
 Cloud Run | <!--answer:cr_c-->694.7<!--answer:cr_c--> | <!--answer:cr_w-->671.2<!--answer:cr_w-->
 Cloud Function | <!--answer:cf_c-->1913.7<!--answer:cf_c--> | <!--answer:cf_w-->657.1<!--answer:cf_w-->
 
+<!--answer:plot-->
+```text
+=== WARM LATENCY DISTRIBUTION HISTOGRAM ===
+IaaS VM: Median 212.2ms
+Cloud Run: Median 671.2ms
+Cloud Function: Median 657.1ms
+```
+<!--answer:plot-->
+
 ## 3. Per-platform analysis
 
-The IaaS VM relies on a single instance, Cloud Run scales up to 3 instances via flags, and Cloud Functions scale automatically within platform limits. Deployment effort decreases from manual IaaS provisioning to managed container and source-based workflows on Cloud Run and Functions.
+- **Scaling & Deployment:** IaaS VM requires manual configuration and static management. Cloud Run and Cloud Function manage infrastructure scaling automatically with varying deployment overheads.
 
-## 4. Architecture
+## 4. Why do two of your three numbers look alike?
 
-Gen-2 Cloud Functions operate on Cloud Run infrastructure, resulting in comparable performance metrics while offering varying levels of underlying container abstraction.
+<!--answer:list-->
+SERVICE: echo, echo-bot (Shared Cloud Run execution plane)
+<!--answer:list-->
+
+The services share execution infrastructure, leading to similar warm latencies.
