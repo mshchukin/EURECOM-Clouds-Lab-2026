@@ -9,7 +9,7 @@
 # ---- Stage 1: builder ----
 FROM python:3.11-slim AS builder
 WORKDIR /app
-COPY requirements.txt .
+COPY phase-1-echo-bot/requirements.txt .
 # TODO: install the requirements into the prefix /install so stage 2 can copy them.
 #       Hint: pip install --no-cache-dir --prefix=/install -r requirements.txt
 
@@ -31,3 +31,4 @@ EXPOSE 8080
 # MY CODE:
 # Launch gunicorn binding 0.0.0.0:8080 and serving "app:app" with 1 worker and 8 threads.
 CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app", "--workers", "1", "--threads", "8"]
+
