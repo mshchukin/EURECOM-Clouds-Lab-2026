@@ -1,0 +1,30 @@
+{
+  "phase": "2",
+  "environment": {
+    "colab": true
+  },
+  "attention": {
+    "naive_ms": 323.491,
+    "vectorized_ms": 1.024,
+    "speedup": 315.91
+  },
+  "threads": {
+    "1": 2514.321,
+    "2": 2265.789,
+    "4": 2230.512,
+    "8": 2331.3
+  },
+  "devices": {
+    "cpu_ms": 451162.8,
+    "gpu_ms": 12498.1
+  },
+  "training": {
+    "steps": 2000,
+    "final_loss": 1.4633,
+    "param_count": 4935680
+  },
+  "sample": "\nnow, that be ill met. I fore a great thou\nSay, I'll corry are soon our in sow: agay.\n\nMERCUTIO:\nNovehort her a e'full best of sorring foir:\nbut by old to him, reyal comes of Gag's arm,\nYou are obifand",
+  "model": {
+    "gcs_url": "https://storage.googleapis.com/project-0787b5e3-aee9-467e-a11-eurecomgpt/model.safetensors"
+  }
+}
