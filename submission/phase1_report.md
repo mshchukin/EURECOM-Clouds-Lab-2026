@@ -29,12 +29,12 @@ Cloud Function | <!--answer:cf_c-->1913.7<!--answer:cf_c--> | <!--answer:cf_w-->
 ### Cloud Platform Latency: Side-by-Side Analysis
 ```mermaid
 xychart-beta
-    title "Phase 1: True Cloud Platform Latency Comparison (Grouped Side-by-Side)"
-    x-axis ["Min: VM", "Run", "Func", " ", "Med: VM", "Run", "Func", "  ", "p95: VM", "Run", "Func", "   ", "Max: VM", "Run", "Func"]
+    title "Phase 1: Cloud Platform Performance Ranges"
+    x-axis ["VM: Min / Med / p95 / Max", "Cloud Run: Min / Med / p95 / Max", "Cloud Functions: Min / Med / p95 / Max"]
     y-axis "Response Time (ms)" 0 --> 800
-    bar "Compute Engine VM" [210.2, 0, 0, 0, 212.2, 0, 0, 0, 214.6, 0, 0, 0, 215.0, 0, 0]
-    bar "Cloud Run" [0, 122.0, 0, 0, 0, 671.2, 0, 0, 0, 679.6, 0, 0, 0, 687.6, 0]
-    bar "Cloud Functions" [0, 0, 128.9, 0, 0, 0, 657.1, 0, 0, 0, 682.8, 0, 0, 0, 685.4]
+    line "Compute Engine VM" [210.2, 212.2, 214.6, 215.0, 0, 0, 0, 0, 0, 0, 0, 0]
+    line "Cloud Run" [0, 0, 0, 0, 122.0, 671.2, 679.6, 687.6, 0, 0, 0, 0]
+    line "Cloud Functions" [0, 0, 0, 0, 0, 0, 0, 0, 128.9, 657.1, 682.8, 685.4]
 ```
 ```mermaid
 xychart-beta
