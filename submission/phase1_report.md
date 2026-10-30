@@ -32,28 +32,28 @@ xychart-beta
     title "1. Minimum Latency Comparison"
     x-axis ["VM", "Cloud Run", "Cloud Functions"]
     y-axis "Latency (ms)" 0 --> 250
-    line "Min Latency" [210.2, 122.0, 128.9]
+    bar "Min Latency" [210.2, 122.0, 128.9]
 ```
 ```mermaid
 xychart-beta
     title "2. Median Latency Comparison"
     x-axis ["VM", "Cloud Run", "Cloud Functions"]
     y-axis "Latency (ms)" 0 --> 800
-    line "Median Latency" [212.2, 671.2, 657.1]
+    bar "Median Latency" [212.2, 671.2, 657.1]
 ```
 ```mermaid
 xychart-beta
     title "3. 95th Percentile (p95) Latency"
     x-axis ["VM", "Cloud Run", "Cloud Functions"]
     y-axis "Latency (ms)" 0 --> 800
-    line "p95 Latency" [214.6, 679.6, 682.8]
+    bar "p95 Latency" [214.6, 679.6, 682.8]
 ```
 ```mermaid
 xychart-beta
     title "4. Maximum Latency Comparison"
     x-axis ["VM", "Cloud Run", "Cloud Functions"]
     y-axis "Latency (ms)" 0 --> 800
-    line "Max Latency" [215.0, 687.6, 685.4]
+    bar "Max Latency" [215.0, 687.6, 685.4]
 ```
 ```mermaid
 xychart-beta
