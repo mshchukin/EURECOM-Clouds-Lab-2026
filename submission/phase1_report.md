@@ -30,11 +30,11 @@ Cloud Function | <!--answer:cf_c-->1913.7<!--answer:cf_c--> | <!--answer:cf_w-->
 ```mermaid
 xychart-beta
     title "Phase 1: True Cloud Platform Latency Comparison (Grouped Side-by-Side)"
-    x-axis ["Min", " ", "  ", "Med", "   ", "    ", "p95", "     ", "      ", "Max", "       ", "        "]
+    x-axis ["Min (VM)", "Min (Run)", "Min (Func)", " ", "Med (VM)", "Med (Run)", "Med (Func)", "  ", "p95 (VM)", "p95 (Run)", "p95 (Func)", "   ", "Max (VM)", "Max (Run)", "Max (Func)"]
     y-axis "Response Time (ms)" 0 --> 800
-    bar "Compute Engine VM" [210.2, 0, 0, 212.2, 0, 0, 214.6, 0, 0, 215.0, 0, 0]
-    bar "Cloud Run" [0, 122.0, 0, 0, 671.2, 0, 0, 679.6, 0, 0, 687.6, 0]
-    bar "Cloud Functions" [0, 0, 128.9, 0, 0, 657.1, 0, 0, 682.8, 0, 0, 685.4]
+    bar "Compute Engine VM" [210.2, 0, 0, 0, 212.2, 0, 0, 0, 214.6, 0, 0, 0, 215.0, 0, 0]
+    bar "Cloud Run" [0, 122.0, 0, 0, 0, 671.2, 0, 0, 0, 679.6, 0, 0, 0, 687.6, 0]
+    bar "Cloud Functions" [0, 0, 128.9, 0, 0, 0, 657.1, 0, 0, 0, 682.8, 0, 0, 0, 685.4]
 ```
 ```mermaid
 xychart-beta
