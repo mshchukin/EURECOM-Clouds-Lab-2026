@@ -28,41 +28,47 @@ Cloud Function | <!--answer:cf_c-->1913.7<!--answer:cf_c--> | <!--answer:cf_w-->
 <!--answer:plot-->
 ### Cloud Platform Latency: Side-by-Side Analysis
 ```mermaid
-flowchart LR
+flowchart TD
     %% Theme Styling Definitions
     classDef vm fill:#2188ff,stroke:#1f427a,stroke-width:1px,color:#fff;
     classDef run fill:#34d058,stroke:#1a662c,stroke-width:1px,color:#fff;
     classDef func fill:#ea4aaa,stroke:#6e204f,stroke-width:1px,color:#fff;
 
-    subgraph MinGroup ["1. Minimum Latency"]
+    %% Row 1 Subgraph Container
+    subgraph Row1 [" "]
         direction LR
-        v1["VM<br>210.2 ms"]:::vm --- r1["Run<br>122.0 ms"]:::run --- f1["Func<br>128.9 ms"]:::func
+        subgraph MinGroup ["1. Minimum Latency"]
+            direction LR
+            v1["VM<br>210.2 ms"]:::vm --- r1["Run<br>122.0 ms"]:::run --- f1["Func<br>128.9 ms"]:::func
+        end
+
+        subgraph MedGroup ["2. Median Latency"]
+            direction LR
+            v2["VM<br>212.2 ms"]:::vm --- r2["Run<br>671.2 ms"]:::run --- f2["Func<br>657.1 ms"]:::func
+        end
     end
 
-    subgraph MedGroup ["2. Median Latency"]
+    %% Row 2 Subgraph Container
+    subgraph Row2 ["  "]
         direction LR
-        v2["VM<br>212.2 ms"]:::vm --- r2["Run<br>671.2 ms"]:::run --- f2["Func<br>657.1 ms"]:::func
+        subgraph p95Group ["3. p95 Latency"]
+            direction LR
+            v3["VM<br>214.6 ms"]:::vm --- r3["Run<br>679.6 ms"]:::run --- f3["Func<br>682.8 ms"]:::func
+        end
+
+        subgraph MaxGroup ["4. Maximum Latency"]
+            direction LR
+            v4["VM<br>215.0 ms"]:::vm --- r4["Run<br>687.6 ms"]:::run --- f4["Func<br>685.4 ms"]:::func
+        end
     end
 
-    subgraph p95Group ["3. p95 Latency"]
-        direction LR
-        v3["VM<br>214.6 ms"]:::vm --- r3["Run<br>679.6 ms"]:::run --- f3["Func<br>682.8 ms"]:::func
-    end
+    %% Force Row 1 to sit directly on top of Row 2
+    Row1 === Row2
 
-    subgraph MaxGroup ["4. Maximum Latency"]
-        direction LR
-        v4["VM<br>215.0 ms"]:::vm --- r4["Run<br>687.6 ms"]:::run --- f4["Func<br>685.4 ms"]:::func
-    end
-
-    %% Enforce 2x2 Layout Ordering
-    MinGroup --> MedGroup
-    MinGroup --> p95Group
-    MedGroup --> MaxGroup
-    p95Group --> MaxGroup
-
-    %% Hide Layout Connections Link lines
-    linkStyle 0,1,2,3,4,5 stroke:transparent,stroke-width:0px;
-    linkStyle 6,7,8,9 stroke:transparent,stroke-width:0px;
+    %% Hide All Layout Borders and Lines
+    style Row1 fill:transparent,stroke:transparent;
+    style Row2 fill:transparent,stroke:transparent;
+    linkStyle 0,1,2,3,4,5,6 stroke:transparent,stroke-width:0px;
 ```
 ```mermaid
 xychart-beta
