@@ -27,34 +27,10 @@ Cloud Function | <!--answer:cf_c-->1913.7<!--answer:cf_c--> | <!--answer:cf_w-->
 **Include your histogram or plot of the warm distribution below (an image, or the ASCII chart measure.py prints). This is read by a human, not the grader:**
 <!--answer:plot-->
 ### Cloud Platform Latency: Side-by-Side Analysis
-```mermaid
-xychart-beta
-    title "1. Minimum Latency Comparison"
-    x-axis ["VM", "Cloud Run", "Cloud Functions"]
-    y-axis "Latency (ms)" 0 --> 250
-    bar "Min Latency" [210.2, 122.0, 128.9]
-```
-```mermaid
-xychart-beta
-    title "2. Median Latency Comparison"
-    x-axis ["VM", "Cloud Run", "Cloud Functions"]
-    y-axis "Latency (ms)" 0 --> 800
-    bar "Median Latency" [212.2, 671.2, 657.1]
-```
-```mermaid
-xychart-beta
-    title "3. 95th Percentile (p95) Latency"
-    x-axis ["VM", "Cloud Run", "Cloud Functions"]
-    y-axis "Latency (ms)" 0 --> 800
-    bar "p95 Latency" [214.6, 679.6, 682.8]
-```
-```mermaid
-xychart-beta
-    title "4. Maximum Latency Comparison"
-    x-axis ["VM", "Cloud Run", "Cloud Functions"]
-    y-axis "Latency (ms)" 0 --> 800
-    bar "Max Latency" [215.0, 687.6, 685.4]
-```
+| | |
+| :---: | :---: |
+| **1. Minimum Latency** <br> ```mermaid \n xchart-beta\n title " "\n x-axis ["VM", "Run", "Func"]\n y-axis "ms" 0 --> 250\n bar "Min" [210.2, 122.0, 128.9]\n ``` | **2. Median Latency** <br> ```mermaid\n xchart-beta\n title " "\n x-axis ["VM", "Run", "Func"]\n y-axis "ms" 0 --> 800\n bar "Med" [212.2, 671.2, 657.1]\n ``` |
+| **3. p95 Latency** <br> ```mermaid\n xchart-beta\n title " "\n x-axis ["VM", "Run", "Func"]\n y-axis "ms" 0 --> 800\n bar "p95" [214.6, 679.6, 682.8]\n ``` | **4. Maximum Latency** <br> ```mermaid\n xchart-beta\n title " "\n x-axis ["VM", "Run", "Func"]\n y-axis "ms" 0 --> 800\n bar "Max" [215.0, 687.6, 685.4]\n ``` |
 ```mermaid
 xychart-beta
     title "VM Warm Requests Distribution Timeline"
