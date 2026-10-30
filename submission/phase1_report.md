@@ -31,16 +31,16 @@ xychart-beta
     title "Phase 1: Cloud Platform Latency Comparison (ms)"
     x-axis ["Minimum", "Median", "95th Percentile (p95)", "Maximum"]
     y-axis "Response Time (ms)" 0 --> 700
-    bar [210.2, 212.2, 214.6, 215.0]
-    bar [122.0, 671.2, 679.6, 687.6]
-    bar [128.9, 657.1, 682.8, 685.4]
+    bar "Compute Engine VM" [210.2, 212.2, 214.6, 215.0]
+    bar "Cloud Run" [122.0, 671.2, 679.6, 687.6]
+    bar "Cloud Functions" [128.9, 657.1, 682.8, 685.4]
 ```
 ```mermaid
 xychart-beta
     title "VM Warm Requests Distribution Timeline"
     x-axis ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12", "R13", "R14", "R15", "R16", "R17", "R18", "R19", "R20"]
     y-axis "Latency (ms)" 200 --> 220
-    bar [212.5, 212.1, 212.7, 213.4, 210.8, 210.7, 211.5, 215.0, 214.6, 212.9, 210.9, 211.4, 210.6, 210.2, 212.4, 211.4, 212.8, 211.3, 213.6, 213.2]
+    bar "VM Request Latency" [212.5, 212.1, 212.7, 213.4, 210.8, 210.7, 211.5, 215.0, 214.6, 212.9, 210.9, 211.4, 210.6, 210.2, 212.4, 211.4, 212.8, 211.3, 213.6, 213.2]
 ```
 <!--answer:plot-->
 
