@@ -27,10 +27,60 @@ Cloud Function | <!--answer:cf_c-->1913.7<!--answer:cf_c--> | <!--answer:cf_w-->
 **Include your histogram or plot of the warm distribution below (an image, or the ASCII chart measure.py prints). This is read by a human, not the grader:**
 <!--answer:plot-->
 ### Cloud Platform Latency: Side-by-Side Analysis
-| | |
-| :---: | :---: |
-| **1. Minimum Latency** <br> ```mermaid \n xchart-beta\n title " "\n x-axis ["VM", "Run", "Func"]\n y-axis "ms" 0 --> 250\n bar "Min" [210.2, 122.0, 128.9]\n ``` | **2. Median Latency** <br> ```mermaid\n xchart-beta\n title " "\n x-axis ["VM", "Run", "Func"]\n y-axis "ms" 0 --> 800\n bar "Med" [212.2, 671.2, 657.1]\n ``` |
-| **3. p95 Latency** <br> ```mermaid\n xchart-beta\n title " "\n x-axis ["VM", "Run", "Func"]\n y-axis "ms" 0 --> 800\n bar "p95" [214.6, 679.6, 682.8]\n ``` | **4. Maximum Latency** <br> ```mermaid\n xchart-beta\n title " "\n x-axis ["VM", "Run", "Func"]\n y-axis "ms" 0 --> 800\n bar "Max" [215.0, 687.6, 685.4]\n ``` |
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <strong>1. Minimum Latency</strong>
+
+```mermaid
+xychart-beta
+    title " "
+    x-axis ["VM", "Run", "Func"]
+    y-axis "ms" 0 --> 250
+    bar "Min" [210.2, 122.0, 128.9]
+```
+
+    </td>
+    <td align="center" width="50%">
+      <strong>2. Median Latency</strong>
+
+```mermaid
+xychart-beta
+    title " "
+    x-axis ["VM", "Run", "Func"]
+    y-axis "ms" 0 --> 800
+    bar "Med" [212.2, 671.2, 657.1]
+```
+
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>3. p95 Latency</strong>
+
+```mermaid
+xychart-beta
+    title " "
+    x-axis ["VM", "Run", "Func"]
+    y-axis "ms" 0 --> 800
+    bar "p95" [214.6, 679.6, 682.8]
+```
+
+    </td>
+    <td align="center">
+      <strong>4. Maximum Latency</strong>
+
+```mermaid
+xychart-beta
+    title " "
+    x-axis ["VM", "Run", "Func"]
+    y-axis "ms" 0 --> 800
+    bar "Max" [215.0, 687.6, 685.4]
+```
+
+    </td>
+  </tr>
+</table>
 ```mermaid
 xychart-beta
     title "VM Warm Requests Distribution Timeline"
