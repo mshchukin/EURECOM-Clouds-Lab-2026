@@ -114,7 +114,7 @@ LAST DEPLOYED AT: 2026-10-29T22:10:28.254762Z
 <!--answer:architecture-->
 This output shows that under the hood, Gen-2 Cloud Functions are actually just standard Cloud Run services. When you deploy the function, Google Cloud automatically packages your code and creates a hidden Cloud Run service named `echo` right alongside your `echo-bot` application. 
 
-Because they run on the exact same infrastructure and use the same network routing, their warm speeds are almost identical (~657ms and ~671ms). 
+Because they run on the exact same infrastructure and use the same network routing, their warm medians are almost identical (~657ms and ~671ms). Visually, both timelines also show matching behaviors where certain requests suddenly drop down to an optimal ~122ms floor, proving they share identical container thread behaviors.
 
 The big difference is the cold start time. Cloud Run is much faster (694.7ms) because it pulls a container image that we already built and stored in Artifact Registry. The Cloud Function takes much longer (1913.7ms) because Google has to take your raw python files, build the container from scratch, install your requirements, and boot it up on demand.
 <!--answer:architecture-->
