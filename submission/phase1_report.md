@@ -27,60 +27,43 @@ Cloud Function | <!--answer:cf_c-->1913.7<!--answer:cf_c--> | <!--answer:cf_w-->
 **Include your histogram or plot of the warm distribution below (an image, or the ASCII chart measure.py prints). This is read by a human, not the grader:**
 <!--answer:plot-->
 ### Cloud Platform Latency: Side-by-Side Analysis
-<table>
-  <tr>
-    <td align="center" width="50%">
-      <strong>1. Minimum Latency</strong>
-
 ```mermaid
-xychart-beta
-    title " "
-    x-axis ["VM", "Run", "Func"]
-    y-axis "ms" 0 --> 250
-    bar "Min" [210.2, 122.0, 128.9]
+flowchart LR
+    %% Theme Styling Definitions
+    classDef vm fill:#2188ff,stroke:#1f427a,stroke-width:1px,color:#fff;
+    classDef run fill:#34d058,stroke:#1a662c,stroke-width:1px,color:#fff;
+    classDef func fill:#ea4aaa,stroke:#6e204f,stroke-width:1px,color:#fff;
+
+    subgraph MinGroup ["1. Minimum Latency"]
+        direction LR
+        v1["VM<br>210.2 ms"]:::vm --- r1["Run<br>122.0 ms"]:::run --- f1["Func<br>128.9 ms"]:::func
+    end
+
+    subgraph MedGroup ["2. Median Latency"]
+        direction LR
+        v2["VM<br>212.2 ms"]:::vm --- r2["Run<br>671.2 ms"]:::run --- f2["Func<br>657.1 ms"]:::func
+    end
+
+    subgraph p95Group ["3. p95 Latency"]
+        direction LR
+        v3["VM<br>214.6 ms"]:::vm --- r3["Run<br>679.6 ms"]:::run --- f3["Func<br>682.8 ms"]:::func
+    end
+
+    subgraph MaxGroup ["4. Maximum Latency"]
+        direction LR
+        v4["VM<br>215.0 ms"]:::vm --- r4["Run<br>687.6 ms"]:::run --- f4["Func<br>685.4 ms"]:::func
+    end
+
+    %% Enforce 2x2 Layout Ordering
+    MinGroup --> MedGroup
+    MinGroup --> p95Group
+    MedGroup --> MaxGroup
+    p95Group --> MaxGroup
+
+    %% Hide Layout Connections Link lines
+    linkStyle 0,1,2,3,4,5 stroke:transparent,stroke-width:0px;
+    linkStyle 6,7,8,9 stroke:transparent,stroke-width:0px;
 ```
-
-    </td>
-    <td align="center" width="50%">
-      <strong>2. Median Latency</strong>
-
-```mermaid
-xychart-beta
-    title " "
-    x-axis ["VM", "Run", "Func"]
-    y-axis "ms" 0 --> 800
-    bar "Med" [212.2, 671.2, 657.1]
-```
-
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <strong>3. p95 Latency</strong>
-
-```mermaid
-xychart-beta
-    title " "
-    x-axis ["VM", "Run", "Func"]
-    y-axis "ms" 0 --> 800
-    bar "p95" [214.6, 679.6, 682.8]
-```
-
-    </td>
-    <td align="center">
-      <strong>4. Maximum Latency</strong>
-
-```mermaid
-xychart-beta
-    title " "
-    x-axis ["VM", "Run", "Func"]
-    y-axis "ms" 0 --> 800
-    bar "Max" [215.0, 687.6, 685.4]
-```
-
-    </td>
-  </tr>
-</table>
 ```mermaid
 xychart-beta
     title "VM Warm Requests Distribution Timeline"
