@@ -29,12 +29,31 @@ Cloud Function | <!--answer:cf_c-->1913.7<!--answer:cf_c--> | <!--answer:cf_w-->
 ### Cloud Platform Latency: Side-by-Side Analysis
 ```mermaid
 xychart-beta
-    title "Phase 1: True Cloud Platform Latency Comparison (Grouped Side-by-Side)"
-    x-axis ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"]
-    y-axis "Response Time (ms)" 0 --> 800
-    bar "Compute Engine VM" [210.2, 0, 0, 0, 0, 212.2, 0, 0, 0, 0, 214.6, 0, 0, 0, 0, 215.0, 0, 0]
-    bar "Cloud Run" [0, 122.0, 0, 0, 0, 0, 671.2, 0, 0, 0, 0, 679.6, 0, 0, 0, 0, 687.6, 0]
-    bar "Cloud Functions" [0, 0, 128.9, 0, 0, 0, 0, 657.1, 0, 0, 0, 0, 682.8, 0, 0, 0, 0, 685.4]
+    title "1. Minimum Latency Comparison"
+    x-axis ["VM", "Cloud Run", "Cloud Functions"]
+    y-axis "Latency (ms)" 0 --> 250
+    line "Min Latency" [210.2, 122.0, 128.9]
+```
+```mermaid
+xychart-beta
+    title "2. Median Latency Comparison"
+    x-axis ["VM", "Cloud Run", "Cloud Functions"]
+    y-axis "Latency (ms)" 0 --> 800
+    line "Median Latency" [212.2, 671.2, 657.1]
+```
+```mermaid
+xychart-beta
+    title "3. 95th Percentile (p95) Latency"
+    x-axis ["VM", "Cloud Run", "Cloud Functions"]
+    y-axis "Latency (ms)" 0 --> 800
+    line "p95 Latency" [214.6, 679.6, 682.8]
+```
+```mermaid
+xychart-beta
+    title "4. Maximum Latency Comparison"
+    x-axis ["VM", "Cloud Run", "Cloud Functions"]
+    y-axis "Latency (ms)" 0 --> 800
+    line "Max Latency" [215.0, 687.6, 685.4]
 ```
 ```mermaid
 xychart-beta
